@@ -9,7 +9,7 @@ atuador_topic = "atuador/status"
 backup_topic = "atuador/status/backup"
 
 mongo1_uri = "mongodb://localhost:27017/"
-mongo2_uri = "mongodb://localhost:27018/"
+mongo2_uri = "mongodb://localhost:27017/"
 
 def connect_mongo():
     try:
@@ -40,8 +40,8 @@ def on_message(client, userdata, msg):
 
         # Salvar dados no MongoDB
         mongo_client = connect_mongo()
-        db = mongo_client["movimento_db"]
-        collection = db["movimento_collection"]
+        db = mongo_client["movimento_db2"]
+        collection = db["movimento_collection2"]
         collection.insert_one({"valor": valor})
 
 if __name__ == "__main__":

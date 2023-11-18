@@ -1,0 +1,31 @@
+1700264605: mosquitto version 2.0.18 starting
+1700264605: Config loaded from /mosquitto/config/mosquitto.conf.
+1700264605: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1700264605: Create a configuration file which defines a listener to allow remote access.
+1700264605: For more details see https://mosquitto.org/documentation/authentication-methods/
+1700264605: Opening ipv4 listen socket on port 1883.
+1700264605: Opening ipv6 listen socket on port 1883.
+1700264605: Error: Address not available
+1700264605: mosquitto version 2.0.18 running
+1700265481: mosquitto version 2.0.18 terminating
+1700265703: mosquitto version 2.0.18 starting
+1700265703: Config loaded from /mosquitto/config/mosquitto.conf.
+1700265703: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1700265703: Create a configuration file which defines a listener to allow remote access.
+1700265703: For more details see https://mosquitto.org/documentation/authentication-methods/
+1700265703: Opening ipv4 listen socket on port 1883.
+1700265703: Opening ipv6 listen socket on port 1883.
+1700265703: Error: Address not available
+1700265703: mosquitto version 2.0.18 running
+1700266583: mosquitto version 2.0.18 terminating
+1700266583: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1700266663: mosquitto version 2.0.18 starting
+1700266663: Config loaded from /mosquitto/config/mosquitto.conf.
+1700266663: Opening ipv4 listen socket on port 1883.
+1700266663: mosquitto version 2.0.18 running
+1700266682: New connection from 172.20.0.1:46840 on port 1883.
+1700266682: Client auto-2BFE12BE-F354-5096-AF02-9F0C30C72FC4 disconnected, not authorised.
+1700266726: New connection from 172.20.0.1:46844 on port 1883.
+1700266726: Client auto-A4F19A4D-1C9F-F789-297C-94A41FAEF844 disconnected, not authorised.
+1700266759: mosquitto version 2.0.18 terminating
+1700266759: Saving in-memory database to /mosquitto/data//mosquitto.db.

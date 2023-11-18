@@ -9,7 +9,7 @@ atuador_topic = "atuador/status"
 backup_topic = "atuador/status/backup"
 
 mongo1_uri = "mongodb://localhost:27017/"
-mongo2_uri = "mongodb://localhost:27018/"
+mongo2_uri = "mongodb://localhost:27017/"
 
 def connect_mongo():
     try:
@@ -40,9 +40,11 @@ def on_message(client, userdata, msg):
 
         # Salvar dados no MongoDB
         mongo_client = connect_mongo()
-        db = mongo_client["movimento_db"]
-        collection = db["movimento_collection"]
+        db = mongo_client["movimento_db1"]
+        collection = db["movimento_collection1"]
         collection.insert_one({"valor": valor})
+
+        print(mongo_client.list_database_names())
 
 if __name__ == "__main__":
     client = mqtt.Client()
@@ -52,5 +54,6 @@ if __name__ == "__main__":
     client.connect(broker_address, port, 60)
 
     client.loop_forever()
+
 
 

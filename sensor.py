@@ -10,8 +10,13 @@ topic = "sensor/movimento"  # Tópico para enviar os valores do sensor
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
         print("Conectado ao servidor MQTT")
+        # Inscreve-se no tópico MQTT ao se conectar
+        client.subscribe(topic)
     else:
         print(f"Falha na conexão ao servidor MQTT com código de retorno {rc}")
+
+def on_message(client, userdata, msg):
+    print(f"Mensagem recebida: {msg.payload.decode()}")
 
 def sensor_movimento(client):
     while True:
@@ -34,6 +39,7 @@ if __name__ == "__main__":
     # Configura o cliente MQTT
     client = mqtt.Client()
     client.on_connect = on_connect
+    client.on_message = on_message  # Adiciona a função de callback para mensagens
 
     # Conecta ao servidor MQTT
     client.connect(broker_address, port, 60)
@@ -50,4 +56,5 @@ if __name__ == "__main__":
 
     # Desconecta do servidor MQTT ao finalizar o programa
     client.disconnect()
+
 

@@ -4,15 +4,16 @@ import threading
 import os
 import signal
 import time
+import paho.mqtt.client as mqtt
 
 def start_sensor():
     os.system("python sensor.py")
 
 def start_controlador1():
-    os.system("python controlador1.py")
+    os.system("python controlador.py")
 
 def start_controlador2():
-    os.system("python controlador2.py")
+    os.system("python controladors.py")
 
 def start_atuador():
     os.system("python atuador.py")
@@ -48,21 +49,21 @@ class MainApplication:
 
         # Iniciar threads para os controladores e o sensor
         sensor_thread = threading.Thread(target=start_sensor)
-        controlador1_thread = threading.Thread(target=start_controlador1)
-        controlador2_thread = threading.Thread(target=start_controlador2)
+        controlador_thread = threading.Thread(target=start_controlador1)
+        controladors_thread = threading.Thread(target=start_controlador2)
         atuador_thread = threading.Thread(target=start_atuador)
 
         # Iniciar as threads
         sensor_thread.start()
         time.sleep(2)  # Aguardar um pouco para garantir que o sensor seja iniciado antes dos controladores
-        controlador1_thread.start()
-        controlador2_thread.start()
+        controlador_thread.start()
+        controladors_thread.start()
         atuador_thread.start()
 
         # Aguardar até que todas as threads terminem
         sensor_thread.join()
-        controlador1_thread.join()
-        controlador2_thread.join()
+        controlador_thread.join()
+        controladors_thread.join()
         atuador_thread.join()
 
 if __name__ == "__main__":
